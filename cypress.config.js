@@ -32,13 +32,13 @@ module.exports = defineConfig({
     },
     
     reporterOptions: {
-      reportDir: "cypress/reports", // Diretório dos relatórios
-      overwrite: true,             // Substituir relatórios antigos
-      html: true,                  // Habilitar geração de relatório HTML
-      json: true,                  // JSON precisa estar ativo para o HTML ser gerado
-      charts: true,                // Incluir gráficos no HTML
-      embeddedScreenshots: true,   // Screenshots embutidos no relatório
-      inlineAssets: true,          // Incorporar CSS e JS no HTML
+      reportDir: "cypress/reports", 
+      overwrite: true,             
+      html: true,                  
+      json: true,                  
+      charts: true,                
+      embeddedScreenshots: true,   
+      inlineAssets: true,          
     },
     specPattern: "**/cypress/Features/**/*.feature",
     baseUrl: "https://front.serverest.dev",
