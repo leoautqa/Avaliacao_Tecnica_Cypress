@@ -1,7 +1,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { faker } from "@faker-js/faker"
 
-
+const url = Cypress.config('apiBaseUrl');
 
 When("Cadastrar um usuario {string}", (tipo) => {
   const nomeFaker = faker.person.fullName();
@@ -26,7 +26,7 @@ When("Cadastrar um usuario {string}", (tipo) => {
 
   cy.request({
     method: 'POST',
-    url: 'https://serverest.dev/usuarios',
+    url: `${url}/usuarios`,
     body: payload,
     headers: {
       'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ Then("Buscar o usuário pelo ID", () =>{
   cy.get('@userId').then((userId) => {
     cy.request({
       method: 'GET',
-      url: `https://serverest.dev/usuarios/${userId}`,
+      url: `${url}/usuarios/${userId}`,
       headers: {
         'Content-Type': 'application/json'
       }
@@ -66,7 +66,7 @@ Given("Fazer login", () =>{
 
       cy.request({
         method: 'POST',
-        url: 'https://serverest.dev/login',
+        url: `${url}/login`,
         body: payload,
         headers: {
           'Content-Type': 'application/json'
@@ -97,7 +97,7 @@ When("Cadastrar um produto", () => {
   cy.get('@token').then((token) => { 
     cy.request({
       method: 'POST',
-      url: 'https://serverest.dev/produtos',
+      url: `${url}/produtos`,
       body: payload,
       headers: {
         Authorization: `Bearer ${token}`, 
@@ -118,7 +118,7 @@ Then("Buscar produto pelo ID", () => {
   cy.get('@prodId').then((prodId) => {
     cy.request({
       method: 'GET',
-      url: `https://serverest.dev/produtos/${prodId}`,
+      url: `${url}/produtos/${prodId}`,
       headers: {
         'Content-Type': 'application/json'
       }
@@ -134,7 +134,7 @@ Then("Colocar o produto no carrinho", () => {
     cy.get('@prodId').then((prodId) => {
       cy.request({
         method: 'POST',
-        url: 'https://serverest.dev/carrinhos',
+        url: `${url}/carrinhos`,
         headers: {
           Authorization: `Bearer ${token}`
         },
