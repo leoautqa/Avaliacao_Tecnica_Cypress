@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:tests": "cypress run"
+    "cy:tests": "cypress run",
+    "generate-html-report": "npx mochawesome-merge cypress/reports/*.json | npx mochawesome-report-generator --inline"
   },
   "keywords": [
     "cypress",
@@ -20,9 +21,10 @@
     "@faker-js/faker": "^9.4.0",
     "cypress": "^13.17.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-on-fix": "^1.0.3",
     "cypress-plugin-api": "^2.11.2",
-    "esbuild": "^0.24.2",
-    "mochawesome": "^7.1.3"
+    "esbuild": "^0.24.2"
   },
   "dependencies": {
     "prettier": "^3.4.2"
@@ -31,5 +33,4 @@
     "nonGlobalStepDefinitions": true,
     "step_definitions": "cypress/support/step_definitions"
   }
-  
 }
