@@ -1,8 +1,8 @@
 import { Given, When, Then} from "@badeball/cypress-cucumber-preprocessor";
 
-const nome = "Avaliação Tecnica NTT DATA";
-const email = "avaliacaotecnica@nttdata.com.br";
-const senha = "avaliacaotecnicanttdata";
+const nome = "Avaliação";
+const email = "avaliacaotecnica@email.com.br";
+const senha = "avaliacaotecnica";
 
 
 function realizarLogin(email, senha) {
