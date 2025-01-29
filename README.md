@@ -41,7 +41,7 @@ Certifique-se de ter o seguinte instalado antes de começar:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/leoautqa/Avaliacao_Tecnica_NTT_DATA.git
+   git clone https://github.com/leoautqa/Avaliacao_Cypress.git
 
 2. Entre no diretório do projeto:
   ```bash
